@@ -23,27 +23,33 @@ conn = mongo_connect(MONGO_URI)
 coll = conn[DATABASE][COLLECTION]
 
 
-new_docs = [{
-    "first": "terry",
-    "last": "pratchett",
-    "dob": "28/04/1948",
-    "gender": "m",
-    "hair_color": "not much",
-    "occupation": "writer",
-    "nationality": "british"
-}, {
-    "first": "george",
-    "last": "rr martin",
-    "dob": "20/09/1948",
-    "gender": "m",
-    "hair_color": "white",
-    "occupation": "writer",
-    "nationality": "american"
-}]
+# new_docs = [{
+#     "first": "terry",
+#     "last": "pratchett",
+#     "dob": "28/04/1948",
+#     "gender": "m",
+#     "hair_color": "not much",
+#     "occupation": "writer",
+#     "nationality": "british"
+# }, {
+#     "first": "george",
+#     "last": "rr martin",
+#     "dob": "20/09/1948",
+#     "gender": "m",
+#     "hair_color": "white",
+#     "occupation": "writer",
+#     "nationality": "american"
+# }]
 
-coll.insert_many(new_docs)
 
-documents = coll.find()
+# coll.insert_many(new_docs)
+
+# coll.delete_one({"first": "douglas"})
+
+# coll.update_many({"nationality": "american"}, {"$set": {"hair_color": "maroon"}})
+
+
+# documents = coll.find(({"nationality": "american"}))
 
 for doc in documents:
     print(doc)
